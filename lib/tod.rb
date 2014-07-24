@@ -1,6 +1,6 @@
 require 'tod/version'
 require 'tod/entities/task'
-require 'tod/repositories/tasks_in_memory'
+require 'tod/tasks_repository/in_memory'
 require 'tod/use_cases/add_task'
 
 module Tod
@@ -9,6 +9,10 @@ module Tod
 
     def configure
       yield self
+    end
+
+    def repo
+      @repo ||= TasksRepository::InMemory.new
     end
 
     def add_task(title)
