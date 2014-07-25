@@ -1,12 +1,6 @@
 require 'spec_helper'
 
 describe Tod do
-  #before do
-    #Tod.configure do |config|
-      #config.repo = Tod::TasksRepository::InMemory.new
-    #end
-  #end
-
   describe '.add_task' do
     let(:repo) { Tod.repo }
 
